@@ -5,3 +5,5 @@ SRA run selector
 Download from terminal
 #
 `fastq-dump --split-files <accession_number>`
+```bash
+fastq-dump --split-files <accession_number>
