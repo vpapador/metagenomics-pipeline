@@ -33,14 +33,14 @@ This pipeline covers the key steps in analyzing metagenomic data, from data down
 The Sequence Read Archive (SRA) Run Selector is a web-based tool that allows you to search and download metagenomics datasets.
 
 You can access it here:  
-👉 https://www.ncbi.nlm.nih.gov/Traces/study/
+→ https://www.ncbi.nlm.nih.gov/Traces/study/
 
 For this course, you will use the dataset with accession number:
 
 **PRJNA448333**
 
 From the following publication:  
-👉 https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-019-0618-5#Sec2
+→ https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-019-0618-5#Sec2
 
 Use the search functionality to locate the dataset and note the accession numbers of the samples you want to download.
 
