@@ -138,4 +138,19 @@ checkm lineage_wf -t 4 -x fa metabat2_output/bin checkm_output
 ```
 
 ## 6. Visualising the phylogenetic tree
-Use MetaBAT2 to bin the assembled contigs into putative metagenome-assembled genomes (MAGs), and then use CheckM and BUSCO or EukCC to estimate the completeness and quality of the resulting MAGs.
+
+To plot and visualize the tree we have produced we can use a free, web-based tool → iTOL (interactive Tree of Life): http://itol.embl.de/index.shtml
+iTOL only takes in newick formatted trees, so we need to quickly reformat the tree with FigTree (http://tree.bio.ed.ac.uk/software/figtree/).
+
+## 7. Annotation
+
+The last step is to annotate the MAGs. To do that we use tools like: 
+
+- Prokka
+- eggNOG-mapper
+
+```
+# Example command to run Prokka
+prokka --outdir prokka_output --prefix sample_name metaspades_output/contigs.fasta
+
+```
