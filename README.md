@@ -25,6 +25,7 @@ This pipeline covers the key steps in analyzing metagenomic data, from data down
 
 ---
 
+
 ## 1. Download Public Data
 
 ### 1.1 <u>SRA Run Selector</u>
@@ -54,3 +55,36 @@ Then run:
 
 ```bash
 fastq-dump --split-files <accession_number>
+```
+
+## 2. Data preprocessing
+### 2.1 Quality control (QC)
+
+To perform Quality Control you have to use tools like:
+- Multi QC
+- FastQC
+  
+These tools will give you metrics such as: read quality scores, GC content, and sequence duplication levels,
+which will help you to identify any potential issues with the data.
+
+```
+mkdir fastqc_out
+
+# Example command to run FastQC
+for each in *.fastq.gz
+do 
+fastqc ${each} -o fastqc
+```
+
+### 2.2 Trimmomatic
+
+The next step is to trim adapter sequences, if present, and remove the low-quality reads from the data.
+
+```
+# Example command to run Trimmomatic
+trimmomatic PE -threads 4 -phred33 input_forward.fastq.gz input_reverse.fastq.gz \
+                output_forward_paired.fastq.gz output_forward_unpaired.fastq.gz \
+                output_reverse_paired.fastq.gz output_reverse_unpaired.fastq.gz \
+                ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+```
+
