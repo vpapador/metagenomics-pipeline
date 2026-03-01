@@ -1,6 +1,6 @@
 # MSc Applied Bioinformatics  
 
-## Metagenomics Pipeline
+# Metagenomics Pipeline
 
 Welcome to this repository, which provides an introductory guide to a metagenomics analysis pipeline.
 
@@ -25,9 +25,9 @@ This pipeline covers the key steps in analyzing metagenomic data, from data down
 
 ---
 
-### 1. Download Public Data
+## 1. Download Public Data
 
-#### 1.1 <u>SRA Run Selector</u>
+### 1.1 <u>SRA Run Selector</u>
 
 The Sequence Read Archive (SRA) Run Selector is a web-based tool that allows you to search and download metagenomics datasets.
 
@@ -44,7 +44,7 @@ From the following publication:
 Use the search functionality to locate the dataset and note the accession numbers of the samples you want to download.
 
 
-#### 1.2 Download from the Terminal
+### 1.2 Download from the Terminal
 
 Once you have the accession numbers, you can use the **SRA Toolkit** to download the data from the command line.
 
