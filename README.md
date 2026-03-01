@@ -1,6 +1,6 @@
 # MSc Applied Bioinformatics  
 
-# Metagenomics Pipeline
+# Introduction to Metagenomics 
 
 Welcome to this repository, which provides an introductory guide to a metagenomics analysis pipeline.
 
@@ -25,6 +25,7 @@ This pipeline covers the key steps in analyzing metagenomic data, from data down
 
 ---
 
+# Metagenomics Pipeline
 
 ## 1. Download Public Data
 
