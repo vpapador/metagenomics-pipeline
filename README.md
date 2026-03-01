@@ -3,3 +3,4 @@ This pipeline covers the key steps in analyzing metagenomics data, from data dow
 ## Download public data
 SRA run selector
 Download from terminal
+`fastq-dump --split-files <accession_number>`
