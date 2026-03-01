@@ -13,7 +13,7 @@ This material is part of an MSc course in Applied Bioinformatics, where the pipe
 
 ---
 
-### What Does It Include?
+#### What Does It Include?
 - Downloading public metagenomic data  
 - Preprocessing and quality control  
 - Assembly and binning  
@@ -21,12 +21,12 @@ This material is part of an MSc course in Applied Bioinformatics, where the pipe
 
 ---
 
-### Getting Started
+#### Getting Started
 Follow the instructions in each section to run the pipeline step by step.
 
 This pipeline covers the key steps in analyzing metagenomic data, from data download and preprocessing to the reconstruction and annotation of metagenome-assembled genomes. Additional steps are included to support further exploration and deeper analysis of the data.
 
-## Download public data
+### Download public data
 SRA run selector
 Download from terminal
 #
