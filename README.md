@@ -26,10 +26,33 @@ Follow the instructions in each section to run the pipeline step by step.
 
 This pipeline covers the key steps in analyzing metagenomic data, from data download and preprocessing to the reconstruction and annotation of metagenome-assembled genomes. Additional steps are included to support further exploration and deeper analysis of the data.
 
-### Download public data
-SRA run selector
-Download from terminal
-#
-`fastq-dump --split-files <accession_number>`
+### 1. Download Public Data
+
+#### 1.1 SRA Run Selector
+
+The Sequence Read Archive (SRA) Run Selector is a web-based tool that allows you to search and download metagenomics datasets.
+
+You can access it here:  
+👉 https://www.ncbi.nlm.nih.gov/Traces/study/
+
+For this course, you will use the dataset with accession number:
+
+**PRJNA448333**
+
+From the following publication:  
+👉 https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-019-0618-5#Sec2
+
+Use the search functionality to locate the dataset and note the accession numbers of the samples you want to download.
+
+---
+
+#### 1.2 Download from the Terminal
+
+Once you have the accession numbers, you can use the **SRA Toolkit** to download the data from the command line.
+
+First, make sure the toolkit is installed on your system.
+
+Then run:
+
 ```bash
 fastq-dump --split-files <accession_number>
