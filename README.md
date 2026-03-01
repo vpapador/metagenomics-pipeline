@@ -154,3 +154,19 @@ The last step is to annotate the MAGs. To do that we use tools like:
 prokka --outdir prokka_output --prefix sample_name metaspades_output/contigs.fasta
 
 ```
+---
+
+# Conclusion
+
+This pipeline provides a complete workflow for an introductory metagenomics analysis.  
+Starting from public raw sequencing data, it guides the user through:
+
+- Data download and preprocessing  
+- Quality control and trimming  
+- Assembly of reads into contigs  
+- Generation of coverage statistics  
+- Binning contigs into metagenome-assembled genomes (MAGs)  
+- Evaluation of MAG completeness and quality  
+- Phylogenetic visualization and genome annotation  
+
+Following these steps will help users understand the key concepts and practical methods used in metagenomics, and provide a foundation for more advanced analyses in microbial ecology and evolutionary studies.
