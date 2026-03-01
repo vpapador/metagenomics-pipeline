@@ -27,7 +27,7 @@ This pipeline covers the key steps in analyzing metagenomic data, from data down
 
 ### 1. Download Public Data
 
-#### 1.1 SRA Run Selector
+#### 1.1 <u>SRA Run Selector</u>
 
 The Sequence Read Archive (SRA) Run Selector is a web-based tool that allows you to search and download metagenomics datasets.
 
