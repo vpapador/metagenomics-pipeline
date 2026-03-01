@@ -8,7 +8,7 @@ This project includes step-by-step instructions for performing an initial analys
 
 ---
 
-### Course Information
+#### Course Information
 This material is part of an MSc course in Applied Bioinformatics, where the pipeline and code were taught and demonstrated by **Dr. Loukas Theodosiou**.
 
 ---
