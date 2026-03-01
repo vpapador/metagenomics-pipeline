@@ -87,4 +87,55 @@ trimmomatic PE -threads 4 -phred33 input_forward.fastq.gz input_reverse.fastq.gz
                 output_reverse_paired.fastq.gz output_reverse_unpaired.fastq.gz \
                 ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 ```
+## 3. Assembly of the data into contigs
+Use the metaSPAdes tool to assemble the preprocessed reads into contigs.
 
+```
+# Example command to run metaSPAdes
+metaspades.py -1 input_forward_paired.fastq.gz -2 input_reverse_paired.fastq.gz -o metaspades_output
+
+```
+## 4. Generate coverage statistics
+
+To generate coverage statistics by mapping reads to the contigs we need to use:
+
+- bwa
+→ http://bio-bwa.sourceforge.net/
+- samtools software
+→ http://www.htslib.org/ ,
+
+ right before running MetaBAT, to reformat the output.
+
+ ```
+# index the contigs file that was produced by metaSPAdes:
+bwa index contigs.fasta
+
+# map the original reads to the contigs:
+bwa mem contigs.fasta input_forward_paired.fastq input_reverse_paired.fastq > input.fastq.sam
+
+# reformat the file with samtools:
+samtools view -Sbu input.fastq.sam > junk
+samtools sort junk input.fastq.sam
+```
+
+## 5. Create metagenome-assembled genomes (MAGs)
+
+To bin the assembled contigs into putative metagenome-assembled genomes (MAGs), we use MetaBAT2:
+
+```
+# Example command to run MetaBAT2
+metabat2 -i metaspades_output/contigs.fasta -o metabat2_output/bin \
+         -m 1500 --unbinned \
+         --saveCls metabat2_output/bin.cls.tsv \
+         --saveLog metabat2_output/metabat2.log
+```
+Then use CheckM and BUSCO or EukCC to estimate the completeness and quality of the resulting MAGs:
+
+```
+# Example command to run CheckM
+checkm lineage_wf -t 4 -x fa metabat2_output/bin checkm_output
+
+```
+
+## 6. Visualising the phylogenetic tree
+Use MetaBAT2 to bin the assembled contigs into putative metagenome-assembled genomes (MAGs), and then use CheckM and BUSCO or EukCC to estimate the completeness and quality of the resulting MAGs.
